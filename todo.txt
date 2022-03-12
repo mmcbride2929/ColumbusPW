@@ -1,0 +1,46 @@
+To do soon:
+
+- list and format features + responsive
+- get commercial photos
+
+- Residential and commercial button scroll to their corresponding section
+
+To do eventually
+
+- Clean up apperance of app. outlines, space between sections, header footer outline/color
+
+
+- consistent border radius on all content
+
+- font sizes/color are consistent, padding edges are consistent, and margin between sections are consistent. 
+
+
+Home page
+
+   
+- 1px line above hero photo
+
+- replace contact button with 
+phone icon 330-861-6695
+calender icon available 7 days a week!
+
+- replace get quote with smaller blue button like contact
+
+Work page
+
+Quote page
+- give quote page have a night mode
+
+
+Other
+- navbar sidebar doesnt close once clicking another tab.
+
+
+Feedback or questions
+
+- How can I make my photo section look better? 
+
+
+
+
+
