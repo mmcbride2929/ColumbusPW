@@ -13,6 +13,8 @@ import {
 
 export default function C2g() {
   const Features = (props) => {
+    const border = useColorModeValue('1px solid white', '1px solid grey')
+
     return (
       <Flex>
         <Box textAlign={'center'}>
@@ -33,14 +35,10 @@ export default function C2g() {
     )
   }
 
+  const border = useColorModeValue('1px solid white', '1px solid grey')
   return (
     <Flex justifyContent="center" alignItems="center">
-      <Box
-        py={8}
-        bg={useColorModeValue('white', 'gray.800')}
-        border={'1px solid white'}
-        shadow="xl"
-      >
+      <Box py={8} bg={useColorModeValue('white', 'gray.700')} shadow="xl">
         <Box maxW="7xl" mx="auto" px={8} textAlign="center">
           <Box textAlign={{ lg: 'center' }}>
             <chakra.p
@@ -80,11 +78,11 @@ export default function C2g() {
               justifyContent="center"
               px={5}
               py={{ base: '6px', md: '18px' }}
-              border={'1px solid #1e6fc7'}
+              border={border}
               fontWeight="900"
               fontSize={{ base: '0.9rem', md: '1rem' }}
               rounded="md"
-              color={useColorModeValue('white', '#1e6fc7')}
+              color={'white'}
               bg={useColorModeValue(('white', '#1e6fc7'))}
               shadow="lg"
               _hover={{

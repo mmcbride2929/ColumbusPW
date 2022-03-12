@@ -4,8 +4,11 @@ import { Box, useColorModeValue } from '@chakra-ui/react'
 
 const CardSection = ({ jobs }) => {
   const { job1, job2, job3, job4 } = jobs
+
+  const bg = useColorModeValue('whitesmoke', 'gray.700')
+
   return (
-    <Box bg={'whitesmoke'} p={{ base: 2, md: 12 }}>
+    <Box bg={bg} p={{ base: 2, md: 12 }}>
       <Box as="card-container">
         <Box
           mx={'auto'}

@@ -18,7 +18,6 @@ export default function SmallWithLogoLeft() {
       color={useColorModeValue('black', 'gray.200')}
       maxW={'1100px'}
       mx={'auto'}
-      mt={'10px'}
     >
       <Container
         as={Stack}

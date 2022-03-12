@@ -28,6 +28,16 @@ calender icon available 7 days a week!
 
 Work page
 
+- add background photo behind header
+
+mobile:
+- make header bigger with less top padding
+- make res and commercial buttons smaller
+
+- make list items text smaller on mobile
+
+
+
 Quote page
 - give quote page have a night mode
 
@@ -41,6 +51,6 @@ Feedback or questions
 - How can I make my photo section look better? 
 
 
-
+- How can I make the sides of the site white?
 
 

@@ -8,11 +8,14 @@ import {
 } from '@chakra-ui/react'
 
 const CommercialFeatures = () => {
+  const bg = useColorModeValue('white', 'gray.800')
+  const text = useColorModeValue('#1e6fc7', 'white')
+
   return (
-    <Box bg={useColorModeValue('#1e6fc7', 'white')}>
+    <Box bg={bg}>
       <Text
         fontSize={{ base: '1.5rem', lg: '2rem' }}
-        color={useColorModeValue('white', 'yellow.300')}
+        color={text}
         fontWeight={'700'}
         textAlign={'center'}
         letterSpacing={'1px'}
@@ -27,7 +30,7 @@ const CommercialFeatures = () => {
         columns={{ base: 1, sm: 2 }}
         spacing={{ base: 2, md: 10 }}
         pb={6}
-        color={useColorModeValue('white', 'white')}
+        color={text}
         fontWeight={'400'}
         textAlign={'center'}
         fontSize={'1.3rem'}

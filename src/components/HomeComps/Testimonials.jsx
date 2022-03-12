@@ -11,19 +11,16 @@ import {
 } from '@chakra-ui/react'
 
 const Testimonials = () => {
+  const bg = useColorModeValue('', 'gray.700')
+  const text = useColorModeValue('#1e6fc7', 'white')
+
   return (
-    <Box
-      pos="relative"
-      overflow="hidden"
-      bg={useColorModeValue('white', 'gray.600')}
-      shadow="xl"
-      py={8}
-    >
+    <Box pos="relative" overflow="hidden" bg={bg} shadow="xl" py={8}>
       <chakra.h1
         fontSize={{ base: '25px', sm: '35px', md: '55px' }}
         lineHeight="short"
         fontWeight="extrabold"
-        color={'#1e6fc7'}
+        color={text}
         textAlign={'center'}
       >
         <chakra.span display={{ base: 'block', xl: 'inline' }}>
@@ -31,7 +28,7 @@ const Testimonials = () => {
         </chakra.span>
       </chakra.h1>
       <Stack
-        bg={useColorModeValue('white', 'gray.800')}
+        bg={bg}
         py={{ base: 0, md: 6 }}
         px={{ base: 6, md: 12 }}
         spacing={{ base: 4, md: 8 }}

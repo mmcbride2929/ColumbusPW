@@ -9,14 +9,12 @@ import {
 } from '@chakra-ui/react'
 
 const Header = () => {
+  const bg = useColorModeValue('#1e6fc7', 'gray.800')
+  const text = useColorModeValue('whitesmoke', 'white')
+  const border = useColorModeValue('1px solid white', '1px solid grey')
+
   return (
-    <Flex
-      bg={useColorModeValue('whitesmoke', 'gray.600')}
-      w="full"
-      py={8}
-      alignItems="center"
-      justifyContent="center"
-    >
+    <Flex bg={bg} w="full" py={8} alignItems="center" justifyContent="center">
       <Flex justify="center" w="full">
         <Box
           w={{ base: 'full', md: '75%' }}
@@ -29,16 +27,13 @@ const Header = () => {
             fontWeight="extrabold"
             letterSpacing="tight"
             lineHeight="shorter"
-            color={useColorModeValue('#1e6fc7', 'white')}
+            color={text}
             mb={6}
           >
             <chakra.span display="block">
               Residential or Commercial..
             </chakra.span>
-            <chakra.span
-              display="block"
-              color={useColorModeValue('brand.600', 'gray.500')}
-            >
+            <chakra.span display="block" color={text}>
               Our work speaks for itself.
             </chakra.span>
           </chakra.span>
@@ -67,11 +62,12 @@ const Header = () => {
                 fontWeight="bold"
                 fontSize={{ base: '0.8rem', md: '1rem' }}
                 rounded="md"
-                color={useColorModeValue('white', '#1e6fc7')}
-                bg={useColorModeValue(('white', '#1e6fc7'))}
+                color={useColorModeValue('#1e6fc7', 'black')}
+                bg={'white'}
                 _hover={{
-                  bg: useColorModeValue('white', '#1e6fc7'),
-                  color: useColorModeValue('#1e6fc7', 'white'),
+                  bg: useColorModeValue('#1e6fc7', 'gray.800'),
+                  color: 'white',
+                  border: border,
                 }}
               >
                 Residential
@@ -96,11 +92,12 @@ const Header = () => {
                 fontWeight="bold"
                 fontSize={{ base: '0.8rem', md: '1rem' }}
                 rounded="md"
-                color={useColorModeValue('#1e6fc7', 'white')}
-                bg={useColorModeValue(('#1e6fc7', 'white'))}
+                color={useColorModeValue('#1e6fc7', 'black')}
+                bg={'white'}
                 _hover={{
-                  bg: useColorModeValue('#1e6fc7', 'white'),
-                  color: useColorModeValue('white', '#1e6fc7'),
+                  bg: useColorModeValue('#1e6fc7', 'gray.800'),
+                  color: 'white',
+                  border: border,
                 }}
               >
                 Commercial

@@ -12,12 +12,11 @@ import {
 const Hero = () => {
   const bg = useColorModeValue('#1e6fc7', 'gray.800')
   const text = useColorModeValue('whitesmoke', 'white')
+  const border = useColorModeValue('1px solid white', '1px solid grey')
 
   return (
-    <Box
-      bg={useColorModeValue('whitesmoke', 'gray.600')}
-      border={'1px solid white'}
-    >
+    <Box bg={useColorModeValue('whitesmoke', 'gray.600')}>
+      {' '}
       <Box
         pos="relative"
         overflow="hidden"
@@ -68,7 +67,7 @@ const Hero = () => {
                   letterSpacing="tight"
                   lineHeight="short"
                   fontWeight="extrabold"
-                  color={useColorModeValue('whitesmoke', 'white')}
+                  color={text}
                 >
                   <chakra.span
                     display={{ base: 'block', xl: 'inline' }}
@@ -83,7 +82,7 @@ const Hero = () => {
                   maxW={{ sm: 'xl' }}
                   mx={{ sm: 'auto', lg: 0 }}
                   textAlign={{ base: 'center', sm: 'left' }}
-                  color={useColorModeValue('whitesmoke', 'white')}
+                  color={text}
                 >
                   If you need something cleaned CPW will take care of it! We
                   have been rated a top 5 power washing company in Columbus for
@@ -109,12 +108,12 @@ const Hero = () => {
                     fontWeight="900"
                     fontSize={{ base: '0.9rem', md: '1rem' }}
                     rounded="md"
-                    color={useColorModeValue('#1e6fc7', 'white')}
-                    bg={useColorModeValue(('#1e6fc7', 'white'))}
+                    color={useColorModeValue('#1e6fc7', 'black')}
+                    bg={text}
                     shadow="lg"
                     _hover={{
-                      bg: useColorModeValue('#1e6fc7', 'whitesmoke'),
-                      color: useColorModeValue('whitesmoke', '#1e6fc7'),
+                      bg: '#1e6fc7',
+                      color: useColorModeValue('whitesmoke', 'whitesmoke'),
                       cursor: 'pointer',
                       border: '1px solid whitesmoke',
                     }}

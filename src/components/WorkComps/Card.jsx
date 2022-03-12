@@ -9,13 +9,17 @@ import {
 } from '@chakra-ui/react'
 
 const Card = ({ job }) => {
+  const bg = useColorModeValue('#1e6fc7', 'white')
+  const text = useColorModeValue('white', 'black')
+  const border = useColorModeValue('1px solid white', '1px solid grey')
+
   const { img, title } = job
   return (
     <Flex alignItems="center" justifyContent="center">
       <Box
         maxW="412px"
         h={{ base: 'full', md: 'full' }}
-        bg={useColorModeValue('#1e6fc7', 'gray.800')}
+        bg={bg}
         shadow="lg"
         overflow="hidden"
         mx={3}

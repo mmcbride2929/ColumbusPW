@@ -12,6 +12,7 @@ import {
   FormControl,
   FormLabel,
   Input,
+  useColorModeValue,
   InputGroup,
   InputLeftElement,
   Textarea,
@@ -22,27 +23,35 @@ import { MdOutlineEmail } from 'react-icons/md'
 import { BsPerson } from 'react-icons/bs'
 
 const Quote = () => {
+  const bg = useColorModeValue('whitesmoke', 'gray.800')
+  const text = useColorModeValue('black', 'white')
+  const border = useColorModeValue('1px solid white', '1px solid grey')
+
   return (
-    <Container bg="whitesmoke" maxW="full" centerContent overflow="hidden">
+    <Container bg={bg} maxW="full" centerContent overflow="hidden">
       <Flex m={{ base: 8, md: 16 }} maxW={'600px'} w={'100%'}>
         <Wrap w={'100%'}>
           <WrapItem
-            bg="white"
+            border={border}
+            bg={useColorModeValue('white', 'gray.700')}
             w={'100%'}
             display={'flex'}
             justifyContent={'center'}
             flexDirection={'column'}
           >
             <Box textAlign={'center'} mx={'auto'} p={6}>
-              <Heading fontSize={{ base: 28, md: 40 }} color={'#1e6fc7'}>
+              <Heading
+                fontSize={{ base: 28, md: 40 }}
+                color={useColorModeValue('#1e6fc7', 'white')}
+              >
                 Get a Free Quote
               </Heading>
-              <Text mt={{ base: 1 }} color="black">
+              <Text mt={{ base: 1 }} color={text}>
                 Fill up the form below to contact
               </Text>
             </Box>
             <Box borderRadius="lg" w={'100%'}>
-              <Box m={8} color="#0B0E3F">
+              <Box m={8} color={text}>
                 <VStack spacing={5}>
                   <FormControl id="name">
                     <FormLabel width={'100%'} textAlign={'center'}>
@@ -74,7 +83,7 @@ const Quote = () => {
                       Service Type
                     </FormLabel>
 
-                    <Select variant="outline">
+                    <Select borderColor="#E0E1E7" variant="outline">
                       <option value="residential" selected>
                         Residential
                       </option>
@@ -91,15 +100,22 @@ const Quote = () => {
                       _hover={{
                         borderRadius: 'gray.300',
                       }}
-                      placeholder="message"
+                      placeholder="message
+                      
+                      
+                      "
                     />
                   </FormControl>
                   <FormControl id="name" textAlign={'center'}>
                     <Button
                       variant="solid"
-                      bg="#0D74FF"
-                      color="white"
-                      _hover={{}}
+                      bg={useColorModeValue('#0D74FF', 'white')}
+                      color={useColorModeValue('white', 'black')}
+                      _hover={{
+                        border: useColorModeValue('none', '1px solid grey'),
+                        bg: useColorModeValue('', 'gray.800'),
+                        color: useColorModeValue('', 'white'),
+                      }}
                     >
                       Get Quote
                     </Button>

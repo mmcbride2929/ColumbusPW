@@ -11,15 +11,12 @@ import {
 } from '@chakra-ui/react'
 
 const BeforeAfter = () => {
+  const bg = useColorModeValue('#1e6fc7', 'gray.800')
+  const text = useColorModeValue('whitesmoke', 'white')
+
   return (
     <Flex w="full" justifyContent="center" alignItems="center" shadow="xl">
-      <Box
-        shadow="xl"
-        bg={useColorModeValue('#1e6fc7', 'gray.800')}
-        px={8}
-        py={8}
-        mx="auto"
-      >
+      <Box bg={bg} px={8} py={8} mx="auto">
         <SimpleGrid
           alignItems="center"
           columns={{ base: 1, md: 2 }}
@@ -33,7 +30,7 @@ const BeforeAfter = () => {
               fontSize={{ base: '2xl', md: '4xl' }}
               fontWeight="extrabold"
               textAlign={{ base: 'center', md: 'left' }}
-              color={useColorModeValue('whitesmoke', 'gray.400')}
+              color={text}
               letterSpacing={'1px'}
               lineHeight={{ md: 'shorter' }}
               textShadow="2px 0 currentcolor"
@@ -43,7 +40,7 @@ const BeforeAfter = () => {
             <chakra.p
               mb={{ base: 0, md: 5 }}
               textAlign={{ base: 'center', sm: 'left' }}
-              color={useColorModeValue('white', 'gray.400')}
+              color={text}
               fontSize={{ md: 'lg' }}
             >
               At CPW we run into projects like this all the time. Before you
@@ -66,7 +63,7 @@ const BeforeAfter = () => {
               fontSize={{ base: '2xl', md: '4xl' }}
               fontWeight="extrabold"
               textAlign={{ base: 'center', md: 'left' }}
-              color={useColorModeValue('whitesmoke', 'gray.400')}
+              color={text}
               lineHeight={{ md: 'shorter' }}
             >
               We're here to help.
@@ -74,7 +71,7 @@ const BeforeAfter = () => {
             <chakra.p
               mb={{ base: 0, md: 5 }}
               textAlign={{ base: 'center', sm: 'left' }}
-              color={useColorModeValue('whitesmoke', 'gray.400')}
+              color={text}
               fontSize={{ md: 'lg' }}
             >
               Our services include driveways, brick surfaces, outdoor furniture,
