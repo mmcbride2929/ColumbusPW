@@ -20,7 +20,7 @@ const ResidentialFeatures = () => {
         textAlign={'center'}
         letterSpacing={'1px'}
         textTransform={'uppercase'}
-        mb={4}
+        mb={{ base: 0, md: 4 }}
         p={4}
       >
         Residential Services
@@ -35,12 +35,22 @@ const ResidentialFeatures = () => {
         textAlign={'center'}
         fontSize={'1.3rem'}
       >
-        <List spacing={2} w={'200px'} mx={'auto'} textAlign={'left'}>
+        <List
+          spacing={2}
+          w={'200px'}
+          mx={'auto'}
+          textAlign={{ base: 'center', md: 'left' }}
+        >
           <ListItem>Brick Restoration</ListItem>
           <ListItem>Cement Restoration</ListItem>{' '}
           <ListItem>Fence Restoration</ListItem>
         </List>
-        <List spacing={2} w={'200px'} mx={'auto'} textAlign={'left'}>
+        <List
+          spacing={2}
+          w={'200px'}
+          mx={'auto'}
+          textAlign={{ base: 'center', md: 'left' }}
+        >
           <ListItem>Furniture Restoration</ListItem>
           <ListItem>Siding Softwash</ListItem>
           <ListItem>Rust Stain Removal</ListItem>

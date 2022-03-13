@@ -17,15 +17,31 @@ import {
   InputLeftElement,
   Textarea,
 } from '@chakra-ui/react'
-
 import { MdOutlineEmail } from 'react-icons/md'
-
 import { BsPerson } from 'react-icons/bs'
+import emailjs from 'emailjs-com'
 
 const Quote = () => {
   const bg = useColorModeValue('whitesmoke', 'gray.800')
   const text = useColorModeValue('black', 'white')
   const border = useColorModeValue('1px solid white', '1px solid grey')
+
+  // submit function
+  const sendEmail = (e) => {
+    e.preventDefault()
+
+    emailjs
+      .sendForm(
+        'service_jhrks7l',
+        'template_4u5p8im',
+        e.target,
+        'kmvTtXEjl430GDVrg'
+      )
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((err) => console.log(err))
+  }
 
   return (
     <Container bg={bg} maxW="full" centerContent overflow="hidden">
@@ -52,75 +68,81 @@ const Quote = () => {
             </Box>
             <Box borderRadius="lg" w={'100%'}>
               <Box m={8} color={text}>
-                <VStack spacing={5}>
-                  <FormControl id="name">
-                    <FormLabel width={'100%'} textAlign={'center'}>
-                      Your Name
-                    </FormLabel>
-                    <InputGroup borderColor="#E0E1E7">
-                      <InputLeftElement
-                        pointerEvents="none"
-                        children={<BsPerson color="gray.800" />}
-                      />
-                      <Input type="text" size="md" />
-                    </InputGroup>
-                  </FormControl>
-                  <FormControl id="name">
-                    <FormLabel width={'100%'} textAlign={'center'}>
-                      Mail
-                    </FormLabel>
-                    <InputGroup borderColor="#E0E1E7">
-                      <InputLeftElement
-                        pointerEvents="none"
-                        children={<MdOutlineEmail color="gray.800" />}
-                      />
-                      <Input type="text" size="md" />
-                    </InputGroup>
-                  </FormControl>
+                <form onSubmit={sendEmail}>
+                  <VStack spacing={5}>
+                    <FormControl>
+                      <FormLabel width={'100%'} textAlign={'center'}>
+                        Your Name
+                      </FormLabel>
+                      <InputGroup borderColor="#E0E1E7">
+                        <InputLeftElement
+                          pointerEvents="none"
+                          children={<BsPerson color="gray.800" />}
+                        />
+                        <Input name="name" type="text" size="md" />
+                      </InputGroup>
+                    </FormControl>
 
-                  <FormControl id="name">
-                    <FormLabel width={'100%'} textAlign={'center'}>
-                      Service Type
-                    </FormLabel>
+                    <FormControl>
+                      <FormLabel width={'100%'} textAlign={'center'}>
+                        Email
+                      </FormLabel>
+                      <InputGroup borderColor="#E0E1E7">
+                        <InputLeftElement
+                          pointerEvents="none"
+                          children={<MdOutlineEmail color="gray.800" />}
+                        />
+                        <Input name="email" type="email" size="md" />
+                      </InputGroup>
+                    </FormControl>
 
-                    <Select borderColor="#E0E1E7" variant="outline">
-                      <option value="residential" selected>
-                        Residential
-                      </option>
-                      <option value="Commercial">Commercial</option>
-                    </Select>
-                  </FormControl>
-                  <FormControl id="name">
-                    <FormLabel width={'100%'} textAlign={'center'}>
-                      Message
-                    </FormLabel>
-                    <Textarea
-                      h={'175px'}
-                      borderColor="gray.300"
-                      _hover={{
-                        borderRadius: 'gray.300',
-                      }}
-                      placeholder="message
-                      
-                      
-                      "
-                    />
-                  </FormControl>
-                  <FormControl id="name" textAlign={'center'}>
-                    <Button
-                      variant="solid"
-                      bg={useColorModeValue('#0D74FF', 'white')}
-                      color={useColorModeValue('white', 'black')}
-                      _hover={{
-                        border: useColorModeValue('none', '1px solid grey'),
-                        bg: useColorModeValue('', 'gray.800'),
-                        color: useColorModeValue('', 'white'),
-                      }}
-                    >
-                      Get Quote
-                    </Button>
-                  </FormControl>
-                </VStack>
+                    <FormControl>
+                      <FormLabel width={'100%'} textAlign={'center'}>
+                        Service Type
+                      </FormLabel>
+
+                      <Select
+                        name="service"
+                        borderColor="#E0E1E7"
+                        variant="outline"
+                      >
+                        <option value="residential" selected>
+                          Residential
+                        </option>
+                        <option value="Commercial">Commercial</option>
+                      </Select>
+                    </FormControl>
+                    <FormControl>
+                      <FormLabel width={'100%'} textAlign={'center'}>
+                        Message
+                      </FormLabel>
+                      <Textarea
+                        name="message"
+                        h={'175px'}
+                        borderColor="gray.300"
+                        _hover={{
+                          borderRadius: 'gray.300',
+                        }}
+                        placeholder="message"
+                      />
+                    </FormControl>
+                    <FormControl id="name" textAlign={'center'}>
+                      <Button
+                        type={'submit'}
+                        variant="solid"
+                        bg={useColorModeValue('#0D74FF', 'white')}
+                        color={useColorModeValue('white', 'black')}
+                        _hover={{
+                          border: useColorModeValue('none', '1px solid grey'),
+                          bg: useColorModeValue('', 'gray.800'),
+                          color: useColorModeValue('', 'white'),
+                        }}
+                      >
+                        Get Quote
+                      </Button>
+                    </FormControl>
+                  </VStack>
+                </form>
               </Box>
             </Box>
           </WrapItem>

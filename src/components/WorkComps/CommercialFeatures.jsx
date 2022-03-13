@@ -20,7 +20,7 @@ const CommercialFeatures = () => {
         textAlign={'center'}
         letterSpacing={'1px'}
         textTransform={'uppercase'}
-        mb={4}
+        mb={{ base: 0, md: 4 }}
         p={4}
       >
         Commercial Services
@@ -35,12 +35,22 @@ const CommercialFeatures = () => {
         textAlign={'center'}
         fontSize={'1.3rem'}
       >
-        <List spacing={2} w={'200px'} mx={'auto'} textAlign={'left'}>
+        <List
+          spacing={2}
+          w={'200px'}
+          mx={'auto'}
+          textAlign={{ base: 'center', md: 'left' }}
+        >
           <ListItem>Parking Garages </ListItem>
           <ListItem>Retail Centers</ListItem>
           <ListItem>Warehouse Interior</ListItem>
         </List>
-        <List spacing={2} w={'200px'} mx={'auto'} textAlign={'left'}>
+        <List
+          spacing={2}
+          w={'200px'}
+          mx={'auto'}
+          textAlign={{ base: 'center', md: 'left' }}
+        >
           <ListItem>Stain Removal</ListItem>
           <ListItem>Roof Cleaning</ListItem>
           <ListItem>Graffiti Removal</ListItem>

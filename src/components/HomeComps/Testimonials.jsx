@@ -48,7 +48,8 @@ const Testimonials = () => {
             <Text fontWeight={600}>Darren Reed</Text>
           </Box>
           <Text
-            fontSize={{ base: 'xl', md: '2xl' }}
+            fontSize={{ base: '1rem', md: '1.2rem' }}
+            fontWeight={'400'}
             textAlign={'center'}
             maxW={'3xl'}
           >
@@ -71,7 +72,8 @@ const Testimonials = () => {
           </Box>
 
           <Text
-            fontSize={{ base: 'xl', md: '2xl' }}
+            fontSize={{ base: '1rem', md: '1.2rem' }}
+            fontWeight={'400'}
             textAlign={'center'}
             maxW={'5xl'}
           >

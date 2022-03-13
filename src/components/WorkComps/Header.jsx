@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react'
 
 const Header = () => {
-  const bg = useColorModeValue('#1e6fc7', 'gray.800')
+  const bg = useColorModeValue('#1e6fc7', 'gray.700')
   const text = useColorModeValue('whitesmoke', 'white')
   const border = useColorModeValue('1px solid white', '1px solid grey')
 
@@ -23,7 +23,7 @@ const Header = () => {
           textAlign={'center'}
         >
           <chakra.span
-            fontSize={{ base: '1.3rem', sm: '1.5rem', md: '4xl' }}
+            fontSize={{ base: '1.5rem', sm: '1.7rem', md: '4xl' }}
             fontWeight="extrabold"
             letterSpacing="tight"
             lineHeight="shorter"
