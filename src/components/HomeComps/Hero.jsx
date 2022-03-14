@@ -1,5 +1,6 @@
 import heroImg from '../../img/hero.jpg'
 
+import { useNavigate } from 'react-router-dom'
 import {
   chakra,
   Box,
@@ -12,11 +13,12 @@ import {
 const Hero = () => {
   const bg = useColorModeValue('#1e6fc7', 'gray.800')
   const text = useColorModeValue('whitesmoke', 'white')
-  const border = useColorModeValue('1px solid white', '1px solid grey')
+
+  // navigate with react-router
+  const navigate = useNavigate()
 
   return (
     <Box bg={useColorModeValue('whitesmoke', 'gray.600')}>
-      {' '}
       <Box
         pos="relative"
         overflow="hidden"
@@ -98,6 +100,7 @@ const Hero = () => {
                   mx={'auto'}
                 >
                   <Link
+                    onClick={() => navigate('/work')}
                     w={{ base: '115px', md: '125px' }}
                     display="inline-flex"
                     alignItems="center"

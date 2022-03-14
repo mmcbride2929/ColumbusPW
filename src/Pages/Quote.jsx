@@ -1,6 +1,7 @@
 import {
   Container,
   Flex,
+  chakra,
   Box,
   Heading,
   Text,
@@ -20,27 +21,67 @@ import {
 import { MdOutlineEmail } from 'react-icons/md'
 import { BsPerson } from 'react-icons/bs'
 import emailjs from 'emailjs-com'
+import { useState } from 'react'
 
 const Quote = () => {
   const bg = useColorModeValue('whitesmoke', 'gray.800')
   const text = useColorModeValue('black', 'white')
   const border = useColorModeValue('1px solid white', '1px solid grey')
 
+  // our input's and error's state
+  const initialValues = { name: '', email: '', message: '' }
+  const [formState, setFormState] = useState(initialValues)
+  const [formErrors, setFormErrors] = useState({})
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    // taking current state.. and adding new value via KVP
+    setFormState({ ...formState, [name]: value })
+  }
+
+  const validateForm = (values) => {
+    const errorsObject = {}
+
+    if (!values.name) {
+      errorsObject.name = '* required'
+    }
+    if (!values.email) {
+      errorsObject.email = '* required'
+    }
+    if (!values.message) {
+      errorsObject.message = '* required'
+    }
+
+    return errorsObject
+  }
+
   // submit function
   const sendEmail = (e) => {
     e.preventDefault()
 
-    emailjs
-      .sendForm(
-        'service_jhrks7l',
-        'template_4u5p8im',
-        e.target,
-        'kmvTtXEjl430GDVrg'
-      )
-      .then((res) => {
-        console.log(res)
-      })
-      .catch((err) => console.log(err))
+    // getting object that may contain errors
+    const errorsCheck = validateForm(formState)
+
+    // if there are any errors, set errors
+    if (errorsCheck.name || errorsCheck.email || errorsCheck.message) {
+      setFormErrors(validateForm(formState))
+
+      // else submit form + clear
+    } else {
+      emailjs
+        .sendForm(
+          'service_jhrks7l',
+          'template_4u5p8im',
+          e.target,
+          'kmvTtXEjl430GDVrg'
+        )
+        .catch((err) => console.log(err))
+
+      //resetting form
+      setFormState(initialValues)
+      setSubmitted(true)
+    }
   }
 
   return (
@@ -74,12 +115,27 @@ const Quote = () => {
                       <FormLabel width={'100%'} textAlign={'center'}>
                         Your Name
                       </FormLabel>
-                      <InputGroup borderColor="#E0E1E7">
+
+                      <InputGroup position={'relative'} borderColor="#E0E1E7">
                         <InputLeftElement
                           pointerEvents="none"
                           children={<BsPerson color="gray.800" />}
                         />
-                        <Input name="name" type="text" size="md" />
+                        <Input
+                          name="name"
+                          type="text"
+                          size="md"
+                          value={formState.name}
+                          onChange={handleChange}
+                        />
+                        <chakra.p
+                          color={'red'}
+                          position={'absolute'}
+                          top={{ base: '10px', md: '10px' }}
+                          right={{ base: '10px', md: '15px' }}
+                        >
+                          {formState.name === '' ? formErrors.name : ''}
+                        </chakra.p>
                       </InputGroup>
                     </FormControl>
 
@@ -87,12 +143,26 @@ const Quote = () => {
                       <FormLabel width={'100%'} textAlign={'center'}>
                         Email
                       </FormLabel>
-                      <InputGroup borderColor="#E0E1E7">
+                      <InputGroup position={'relative'} borderColor="#E0E1E7">
                         <InputLeftElement
                           pointerEvents="none"
                           children={<MdOutlineEmail color="gray.800" />}
                         />
-                        <Input name="email" type="email" size="md" />
+                        <Input
+                          name="email"
+                          type="email"
+                          size="md"
+                          value={formState.email}
+                          onChange={handleChange}
+                        />
+                        <chakra.p
+                          color={'red'}
+                          position={'absolute'}
+                          top={{ base: '10px', md: '10px' }}
+                          right={{ base: '10px', md: '15px' }}
+                        >
+                          {formState.email === '' ? formErrors.email : ''}
+                        </chakra.p>
                       </InputGroup>
                     </FormControl>
 
@@ -106,7 +176,7 @@ const Quote = () => {
                         borderColor="#E0E1E7"
                         variant="outline"
                       >
-                        <option value="residential" selected>
+                        <option value="residential" defaultValue>
                           Residential
                         </option>
                         <option value="Commercial">Commercial</option>
@@ -116,15 +186,26 @@ const Quote = () => {
                       <FormLabel width={'100%'} textAlign={'center'}>
                         Message
                       </FormLabel>
+
                       <Textarea
+                        onChange={handleChange}
                         name="message"
                         h={'175px'}
                         borderColor="gray.300"
+                        value={formState.message}
                         _hover={{
                           borderRadius: 'gray.300',
                         }}
                         placeholder="message"
                       />
+                      <chakra.p
+                        color={'red'}
+                        position={'absolute'}
+                        top={{ base: '40px', md: '9' }}
+                        right={{ base: '10px', md: '3' }}
+                      >
+                        {formState.message === '' ? formErrors.message : ''}
+                      </chakra.p>
                     </FormControl>
                     <FormControl id="name" textAlign={'center'}>
                       <Button
@@ -140,6 +221,18 @@ const Quote = () => {
                       >
                         Get Quote
                       </Button>
+                      {submitted ? (
+                        <chakra.p
+                          color={'red'}
+                          fontWeight={'500'}
+                          marginTop={5}
+                          textAlign={'center'}
+                        >
+                          Thank you! Message Recieved
+                        </chakra.p>
+                      ) : (
+                        ''
+                      )}
                     </FormControl>
                   </VStack>
                 </form>

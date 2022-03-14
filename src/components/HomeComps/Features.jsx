@@ -1,6 +1,7 @@
 import residential from '../../img/residential.jpg'
 import commercial from '../../img/commercial.jpg'
 
+import { useNavigate } from 'react-router-dom'
 import {
   chakra,
   Image,
@@ -13,8 +14,6 @@ import {
 
 export default function C2g() {
   const Features = (props) => {
-    const border = useColorModeValue('1px solid white', '1px solid grey')
-
     return (
       <Flex>
         <Box textAlign={'center'}>
@@ -36,6 +35,9 @@ export default function C2g() {
   }
 
   const border = useColorModeValue('1px solid white', '1px solid grey')
+  // navigate with react-router
+  const navigate = useNavigate()
+
   return (
     <Flex justifyContent="center" alignItems="center">
       <Box py={8} bg={useColorModeValue('white', 'gray.700')} shadow="xl">
@@ -72,6 +74,7 @@ export default function C2g() {
             mx={'auto'}
           >
             <Link
+              onClick={() => navigate('/quote')}
               w={{ base: '115px', md: '125px' }}
               display="inline-flex"
               alignItems="center"

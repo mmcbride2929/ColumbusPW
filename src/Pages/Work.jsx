@@ -6,14 +6,12 @@ import img5 from '../img/gallery5.jpg'
 import img6 from '../img/gallery6.jpg'
 import img7 from '../img/gallery7.jpg'
 import img8 from '../img/gallery8.jpg'
-
-import { Box, useColorModeValue } from '@chakra-ui/react'
-import { useState } from 'react'
-
 import ResidentialFeatures from '../components/WorkComps/ResidentialFeatures'
 import Header from '../components/WorkComps/Header'
 import CardSection from '../components/WorkComps/CardSection'
 import CommercialFeatures from '../components/WorkComps/CommercialFeatures'
+
+import { useState } from 'react'
 
 const Work = () => {
   const [residentialJobs, setResidentialJobs] = useState({

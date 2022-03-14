@@ -12,7 +12,7 @@ const ResidentialFeatures = () => {
   const text = useColorModeValue('#1e6fc7', 'white')
 
   return (
-    <Box bg={bg}>
+    <Box bg={bg} id="residential">
       <Text
         fontSize={{ base: '1.5rem', lg: '2rem' }}
         color={text}

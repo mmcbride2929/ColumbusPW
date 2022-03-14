@@ -1,30 +1,18 @@
 To do soon:
 
-- Residential and commercial button scroll to their corresponding section
-
-To do eventually
-
-
 
 Home page
 
    
 
 Work page
-- add background photo behind header
-- dropdown residential is huge
-- clear form + add email confirmation
-
-mobile:
-
-
-
+- select dropdown residential is huge
 
 Quote page
-- contact form validation/require
 
 Other
-- navbar sidebar doesnt close once clicking another tab.
+
+
 
 
 Feedback or questions
@@ -32,8 +20,6 @@ Feedback or questions
 - How can I make my photo section look better? 
 
 
-- How can I make the sides of the site white?
-
-
+- How can I make the sides of the site whitesmoke and gray.700??
 
 

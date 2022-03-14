@@ -23,8 +23,6 @@ const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { colorMode, toggleColorMode } = useColorMode()
 
-  const text = useColorModeValue('#1e6fc7', 'white')
-
   return (
     <>
       <Box
@@ -115,7 +113,10 @@ const Header = () => {
                 _hover={{
                   underline: 'none',
                 }}
-                onClick={() => navigate('/')}
+                onClick={() => {
+                  navigate('/')
+                  onClose()
+                }}
               >
                 Home
               </Link>
@@ -123,7 +124,10 @@ const Header = () => {
                 _hover={{
                   underline: 'none',
                 }}
-                onClick={() => navigate('/work')}
+                onClick={() => {
+                  navigate('/work')
+                  onClose()
+                }}
               >
                 Work
               </Link>
@@ -131,7 +135,10 @@ const Header = () => {
                 _hover={{
                   underline: 'none',
                 }}
-                onClick={() => navigate('/quote')}
+                onClick={() => {
+                  navigate('/quote')
+                  onClose()
+                }}
               >
                 Quote
               </Link>

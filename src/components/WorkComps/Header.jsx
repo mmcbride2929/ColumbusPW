@@ -1,21 +1,38 @@
-import React from 'react'
+import bgPhoto from '../../img/headerbg.jpg'
+
 import {
   chakra,
   Box,
   Stack,
+  Link,
   Flex,
   useColorModeValue,
-  Link,
+  Button,
+  Center,
 } from '@chakra-ui/react'
+import { Link as ScrollLink } from 'react-scroll'
 
 const Header = () => {
-  const bg = useColorModeValue('#1e6fc7', 'gray.700')
   const text = useColorModeValue('whitesmoke', 'white')
   const border = useColorModeValue('1px solid white', '1px solid grey')
 
   return (
-    <Flex bg={bg} w="full" py={8} alignItems="center" justifyContent="center">
-      <Flex justify="center" w="full">
+    <Flex
+      w="full"
+      bgImage={bgPhoto}
+      backgroundRepeat="no-repeat"
+      backgroundSize={'cover'}
+      alignItems="center"
+      justifyContent="center"
+    >
+      <Flex
+        justify="center"
+        w="full"
+        py={8}
+        backdropFilter="auto"
+        backdropBrightness="80%"
+        backdropBlur={'3.5px'}
+      >
         <Box
           w={{ base: 'full', md: '75%' }}
           px={4}
@@ -44,34 +61,31 @@ const Header = () => {
             mt={4}
             alignItems={{ base: 'center' }}
           >
-            <Box
-              display="inline-flex"
-              rounded="md"
-              shadow="md"
-              h={{ base: '45px', md: '55px' }}
-              w={{ base: '85px', md: '125px' }}
-            >
-              <Link
-                w={{ base: '85px', md: '125px' }}
-                display="inline-flex"
-                alignItems="center"
-                justifyContent="center"
-                px={5}
-                py={{ base: '6px', md: '18px' }}
-                border="solid transparent"
-                fontWeight="bold"
-                fontSize={{ base: '0.8rem', md: '1rem' }}
-                rounded="md"
-                color={useColorModeValue('#1e6fc7', 'black')}
-                bg={'white'}
-                _hover={{
-                  bg: useColorModeValue('#1e6fc7', 'gray.800'),
-                  color: 'white',
-                  border: border,
-                }}
-              >
-                Residential
-              </Link>
+            <Box display="inline-flex" rounded="md" shadow="md">
+              <ScrollLink to="residential">
+                <Button
+                  h={{ base: '45px', md: '55px' }}
+                  w={{ base: '85px', md: '125px' }}
+                  display="inline-flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  px={5}
+                  py={{ base: '6px', md: '18px' }}
+                  border="solid transparent"
+                  fontWeight="bold"
+                  fontSize={{ base: '0.8rem', md: '1rem' }}
+                  rounded="md"
+                  color={useColorModeValue('#1e6fc7', 'black')}
+                  bg={'white'}
+                  _hover={{
+                    bg: useColorModeValue('#1e6fc7', 'gray.800'),
+                    color: 'white',
+                    border: border,
+                  }}
+                >
+                  Residential
+                </Button>
+              </ScrollLink>
             </Box>
             <Box
               ml={3}
@@ -81,27 +95,30 @@ const Header = () => {
               h={{ base: '45px', md: '55px' }}
               w={{ base: '85px', md: '125px' }}
             >
-              <Link
-                w={{ base: '85px', md: '125px' }}
-                display="inline-flex"
-                alignItems="center"
-                justifyContent="center"
-                px={5}
-                py={{ base: '6px', md: '18px' }}
-                border="solid transparent"
-                fontWeight="bold"
-                fontSize={{ base: '0.8rem', md: '1rem' }}
-                rounded="md"
-                color={useColorModeValue('#1e6fc7', 'black')}
-                bg={'white'}
-                _hover={{
-                  bg: useColorModeValue('#1e6fc7', 'gray.800'),
-                  color: 'white',
-                  border: border,
-                }}
-              >
-                Commercial
-              </Link>
+              <ScrollLink to="commercial">
+                <Button
+                  h={{ base: '45px', md: '55px' }}
+                  w={{ base: '85px', md: '125px' }}
+                  display="inline-flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  px={5}
+                  py={{ base: '6px', md: '18px' }}
+                  border="solid transparent"
+                  fontWeight="bold"
+                  fontSize={{ base: '0.8rem', md: '1rem' }}
+                  rounded="md"
+                  color={useColorModeValue('#1e6fc7', 'black')}
+                  bg={'white'}
+                  _hover={{
+                    bg: useColorModeValue('#1e6fc7', 'gray.800'),
+                    color: 'white',
+                    border: border,
+                  }}
+                >
+                  Commercial
+                </Button>
+              </ScrollLink>
             </Box>
           </Stack>
         </Box>
