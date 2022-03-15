@@ -12,6 +12,7 @@ import CardSection from '../components/WorkComps/CardSection'
 import CommercialFeatures from '../components/WorkComps/CommercialFeatures'
 
 import { useState } from 'react'
+import { Box } from '@chakra-ui/react'
 
 const Work = () => {
   const [residentialJobs, setResidentialJobs] = useState({
@@ -29,13 +30,13 @@ const Work = () => {
   })
 
   return (
-    <>
+    <Box boxShadow={'rgba(0, 0, 0, 0.24) 0px 3px 8px'}>
       <Header />
       <ResidentialFeatures />
       <CardSection jobs={residentialJobs} />
       <CommercialFeatures />
       <CardSection jobs={commercialJobs} />
-    </>
+    </Box>
   )
 }
 

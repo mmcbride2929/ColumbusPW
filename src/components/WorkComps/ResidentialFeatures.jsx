@@ -8,8 +8,8 @@ import {
 } from '@chakra-ui/react'
 
 const ResidentialFeatures = () => {
-  const bg = useColorModeValue('white', 'gray.800')
-  const text = useColorModeValue('#1e6fc7', 'white')
+  const bg = useColorModeValue('#1e6fc7', 'gray.800')
+  const text = useColorModeValue('white', 'white')
 
   return (
     <Box bg={bg} id="residential">

@@ -24,9 +24,9 @@ import emailjs from 'emailjs-com'
 import { useState } from 'react'
 
 const Quote = () => {
-  const bg = useColorModeValue('whitesmoke', 'gray.800')
+  const bg = useColorModeValue('white', 'gray.800')
   const text = useColorModeValue('black', 'white')
-  const border = useColorModeValue('1px solid white', '1px solid grey')
+  const border = useColorModeValue('1px solid black', '1px solid grey')
 
   // our input's and error's state
   const initialValues = { name: '', email: '', message: '' }
@@ -85,13 +85,21 @@ const Quote = () => {
   }
 
   return (
-    <Container bg={bg} maxW="full" centerContent overflow="hidden">
+    <Container
+      bg={bg}
+      h={'90vh'}
+      maxW="full"
+      boxShadow={'rgba(0, 0, 0, 0.24) 0px 3px 8px'}
+      centerContent
+      overflow="hidden"
+    >
       <Flex m={{ base: 8, md: 16 }} maxW={'600px'} w={'100%'}>
         <Wrap w={'100%'}>
           <WrapItem
             border={border}
-            bg={useColorModeValue('white', 'gray.700')}
+            bg={useColorModeValue('whitesmoke', 'gray.700')}
             w={'100%'}
+            shadow={'xl'}
             display={'flex'}
             justifyContent={'center'}
             flexDirection={'column'}
@@ -116,7 +124,7 @@ const Quote = () => {
                         Your Name
                       </FormLabel>
 
-                      <InputGroup position={'relative'} borderColor="#E0E1E7">
+                      <InputGroup position={'relative'} borderColor="black">
                         <InputLeftElement
                           pointerEvents="none"
                           children={<BsPerson color="gray.800" />}
@@ -125,6 +133,7 @@ const Quote = () => {
                           name="name"
                           type="text"
                           size="md"
+                          bg={'white'}
                           value={formState.name}
                           onChange={handleChange}
                         />
@@ -143,7 +152,7 @@ const Quote = () => {
                       <FormLabel width={'100%'} textAlign={'center'}>
                         Email
                       </FormLabel>
-                      <InputGroup position={'relative'} borderColor="#E0E1E7">
+                      <InputGroup position={'relative'} borderColor="black">
                         <InputLeftElement
                           pointerEvents="none"
                           children={<MdOutlineEmail color="gray.800" />}
@@ -152,6 +161,7 @@ const Quote = () => {
                           name="email"
                           type="email"
                           size="md"
+                          bg={'white'}
                           value={formState.email}
                           onChange={handleChange}
                         />
@@ -172,8 +182,9 @@ const Quote = () => {
                       </FormLabel>
 
                       <Select
+                        bg={'white'}
                         name="service"
-                        borderColor="#E0E1E7"
+                        borderColor="black"
                         variant="outline"
                       >
                         <option value="residential" defaultValue>
@@ -188,10 +199,11 @@ const Quote = () => {
                       </FormLabel>
 
                       <Textarea
+                        bg={'white'}
                         onChange={handleChange}
                         name="message"
                         h={'175px'}
-                        borderColor="gray.300"
+                        borderColor="black"
                         value={formState.message}
                         _hover={{
                           borderRadius: 'gray.300',

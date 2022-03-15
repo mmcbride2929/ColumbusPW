@@ -26,10 +26,11 @@ const Header = () => {
   return (
     <>
       <Box
-        bg={useColorModeValue('white', 'gray.900')}
+        bg={useColorModeValue('whitesmoke', 'gray.900')}
         px={4}
         maxWidth={'1100px'}
         mx={'auto'}
+        boxShadow={'rgba(0, 0, 0, 0.24) 0px 3px 8px'}
       >
         <Flex
           h={16}

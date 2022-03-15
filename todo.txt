@@ -6,7 +6,6 @@ Home page
    
 
 Work page
-- select dropdown residential is huge
 
 Quote page
 
@@ -19,7 +18,8 @@ Feedback or questions
 
 - How can I make my photo section look better? 
 
-
 - How can I make the sides of the site whitesmoke and gray.700??
 
+- required doesn't go away once the form is submitted
 
+- select dropdown residential is huge

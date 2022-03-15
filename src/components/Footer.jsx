@@ -9,10 +9,11 @@ import {
 export default function SmallWithLogoLeft() {
   return (
     <Box
-      bg={useColorModeValue('white', 'gray.900')}
+      bg={useColorModeValue('whitesmoke', 'gray.900')}
       color={useColorModeValue('black', 'gray.200')}
       maxW={'1100px'}
       mx={'auto'}
+      boxShadow={'rgba(0, 0, 0, 0.24) 0px 5px 8px'}
     >
       <Container
         as={Stack}

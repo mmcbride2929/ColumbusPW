@@ -15,7 +15,7 @@ const Testimonials = () => {
   const text = useColorModeValue('#1e6fc7', 'white')
 
   return (
-    <Box pos="relative" overflow="hidden" bg={bg} shadow="xl" py={8}>
+    <Box pos="relative" overflow="hidden" bg={bg} py={8}>
       <chakra.h1
         fontSize={{ base: '25px', sm: '35px', md: '55px' }}
         lineHeight="short"
