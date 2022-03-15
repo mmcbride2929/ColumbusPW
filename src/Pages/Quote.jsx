@@ -87,7 +87,7 @@ const Quote = () => {
   return (
     <Container
       bg={bg}
-      h={'90vh'}
+      h={{ base: '', md: '90vh' }}
       maxW="full"
       boxShadow={'rgba(0, 0, 0, 0.24) 0px 3px 8px'}
       centerContent

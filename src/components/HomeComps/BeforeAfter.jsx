@@ -31,9 +31,7 @@ const BeforeAfter = () => {
               fontWeight="extrabold"
               textAlign={{ base: 'center', md: 'left' }}
               color={text}
-              letterSpacing={'1px'}
               lineHeight={{ md: 'shorter' }}
-              textShadow="2px 0 currentcolor"
             >
               Does your yard look something like this?
             </chakra.h2>
